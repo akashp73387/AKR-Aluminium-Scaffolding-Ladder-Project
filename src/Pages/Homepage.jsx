@@ -2,13 +2,18 @@ import React from 'react';
 import Carousel from '../Components/Carousel.jsx';
 import Highlights from '../Components/Highlights.jsx';
 import Footer from '../Components/Footer.jsx';
+import Navbar from '../Components/Navbar.jsx';
+import Products from '../Components/Products.jsx';
 
 const Homepage = () => {
     return (
-        <div>
+        <div >
+            <Navbar/>
             <Carousel/>
             <Highlights/>
-            <Footer/>
+            <Products/>
+            {/* <Footer/> */}
+           
         </div>
     );
 };
