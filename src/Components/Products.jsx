@@ -1,38 +1,44 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const products = [
   {
     title: "Single Width Scaffolding With Stairway",
-    code: "ISFSW",
-    description: "Engineered for efficiency in compact spaces. The built-in stairway ensures secure and effortless vertical access, ideal for maintenance and installation tasks.",
-    image: "https://4.imimg.com/data4/OJ/KG/MY-6180863/aluminium-scaffolding-ladder-1000x1000.png"
+    code: "single-width-scaffolding-with-stairway",
+    description:
+      "Engineered for efficiency in compact spaces. The built-in stairway ensures secure and effortless vertical access, ideal for maintenance and installation tasks.",
+    image:
+      "https://4.imimg.com/data4/OJ/KG/MY-6180863/aluminium-scaffolding-ladder-1000x1000.png",
   },
   {
     title: "Double Width Scaffolding With Stairway",
-    code: "ISFDW",
-    description: "Designed for larger teams and heavier loads, this spacious platform combines safety and functionality with easy stairway access for busy sites.",
-    image: "https://www.tsuregroup.com/assets/images/home/p1.png"
+    code: "double-width-scaffolding-with-stairway",
+    description:
+      "Designed for larger teams and heavier loads, this spacious platform combines safety and functionality with easy stairway access for busy sites.",
+    image: "https://www.tsuregroup.com/assets/images/home/p1.png",
   },
   {
     title: "Single Width Scaffolding Without Stairway",
-    code: "ISFS",
-    description: "Compact and lightweight, perfect for quick repairs in tight areas. Built to last with high-strength aluminium frames and anti-slip platforms.",
-    image: "http://www.tsuregroup.com/assets/images/home/3.png"
+    code: "single-width-scaffolding-without-stairway",
+    description:
+      "Compact and lightweight, perfect for quick repairs in tight areas. Built to last with high-strength aluminium frames and anti-slip platforms.",
+    image: "http://www.tsuregroup.com/assets/images/home/3.png",
   },
   {
     title: "Double Width Scaffolding Without Stairway",
-    code: "ISFD",
-    description: "Offers a broad, stable working surface with minimal footprint. Ideal for construction professionals requiring mobility and reliability.",
-    image: "https://www.pngkey.com/png/full/349-3497704_youngman-boss-narrow-tower-scaffold-boss-youngman.png"
-  }
+    code: "double-width-scaffolding-without-stairway",
+    description:
+      "Offers a broad, stable working surface with minimal footprint. Ideal for construction professionals requiring mobility and reliability.",
+    image:
+      "https://www.pngkey.com/png/full/349-3497704_youngman-boss-narrow-tower-scaffold-boss-youngman.png",
+  },
 ];
 
 const Products = () => {
   return (
-    <div className="py-10 bg-[#F2F9FF]" id='product'  >
+    <div className="py-10 bg-[#F2F9FF]" id="product">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -45,7 +51,9 @@ const Products = () => {
             Premium <span className="text-blue-700">Aluminium Scaffolding</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto mt-4">
-            Lightweight. Durable. Engineered for precision. Our scaffolding solutions serve industrial, maintenance, and construction needs with top-tier performance.
+            Lightweight. Durable. Engineered for precision. Our scaffolding
+            solutions serve industrial, maintenance, and construction needs with
+            top-tier performance.
           </p>
         </motion.div>
 
@@ -82,12 +90,25 @@ const Products = () => {
                 <p className="text-sm text-gray-600 flex-grow mb-6">
                   {product.description}
                 </p>
-                <button className="mt-auto bg-[#0A2647] hover:bg-[#3A3960] text-white text-sm py-2 px-4 rounded-lg transition duration-300 flex items-center justify-center shadow">
+                <Link
+                  to={`/${product.code}`}
+                  className="mt-auto bg-[#0A2647] hover:bg-[#3A3960] text-white text-sm py-2 px-4 rounded-lg transition duration-300 flex items-center justify-center shadow"
+                >
                   View Details
-                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                  <svg
+                    className="w-4 h-4 ml-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    ></path>
                   </svg>
-                </button>
+                </Link>
               </div>
             </motion.div>
           ))}

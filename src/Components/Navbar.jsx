@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,14 +15,14 @@ function Navbar() {
         <div className="flex justify-between h-16">
           {/* Logo (left side) */}
           <div className="flex-shrink-0 flex items-center">
-            <a href="#" className="flex items-center">
+            <Link to="/" className="flex items-center">
               <img 
                 className="h-8 w-auto" 
                 src="https://logodix.com/logo/343253.png" 
                 alt="Logo"
               />
              
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Navigation (center to right) */}

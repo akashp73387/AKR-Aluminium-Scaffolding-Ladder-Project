@@ -4,6 +4,7 @@
  import image2 from "../assets/image2.jpg";
  import image3 from "../assets/image3.jpg";
 
+
  const Dwwospage = () => {
    const [currentImage, setCurrentImage] = useState(0);
 
@@ -38,6 +39,7 @@
 
    return (
      <div className="w-full">
+     
        {/* Header */}
        <div className="max-w-7xl mx-auto py-10 px-4 sm:px-8 md:px-12 lg:px-24">
          <motion.div
@@ -291,6 +293,7 @@
                })}
              </div>
            </div>
+      
      </div>
    );
  };

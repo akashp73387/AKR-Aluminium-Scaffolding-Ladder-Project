@@ -10,7 +10,7 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/home-page" element={<Homepage />} />
+        <Route path="/" element={<Homepage />} />
         <Route
           path="/single-width-scaffolding-with-stairway"
           element={<Swwspage />}
