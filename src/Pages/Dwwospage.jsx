@@ -52,8 +52,8 @@ import Footer from "../Components/Footer";
            transition={{ duration: 0.5 }}
            className="text-center mb-12"
          >
-           <h1 className="text-4xl font-extrabold text-gray-900 mb-3">
-             Double Width Scaffolding Without Stairway
+           <h1 className="text-3xl md:text-5xl font-extrabold text-gray-900 mb-3">
+             Double Width Scaffolding <span className="text-blue-700">Without Stairway</span> 
            </h1>
            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
              Professional-grade double width scaffolding system designed for
@@ -186,7 +186,7 @@ import Footer from "../Components/Footer";
                <tr>
                  <th
                    colSpan={5}
-                   className="px-4 py-4 text-2xl font-bold text-blue-900 text-center bg-blue-50"
+                   className="px-4 py-4 text-2xl font-bold text-blue-900 text-center bg-blue-50 "
                  >
                    Specifications
                  </th>

@@ -72,7 +72,7 @@ const Highlights = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
             Aluminium Scaffolding Ladder <span className="text-[#2f6ce5]">Highlights</span>
           </h2>
          

@@ -1,12 +1,19 @@
 import React, { useState } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaTimes, FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+
+
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);  // Dropdown state for mobile
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const toggleDropdown = () => {
+    setDropdownOpen(!dropdownOpen);  // Toggle dropdown visibility
   };
 
   return (
@@ -21,7 +28,6 @@ function Navbar() {
                 src="https://logodix.com/logo/343253.png" 
                 alt="Logo"
               />
-             
             </Link>
           </div>
 
@@ -40,12 +46,50 @@ function Navbar() {
               >
                 About Us
               </a>
-              <a 
-                href="#product" 
-                className="text-white hover:text-indigo-600 px-3 py-2 text-sm font-medium no-underline"
-              >
-                Product
-              </a>
+
+              {/* Products Dropdown for Desktop */}
+              <div className="relative">
+                <button
+                  onClick={toggleDropdown}
+                  className="text-white hover:text-indigo-600 px-3 py-2 text-sm font-medium flex items-center"
+                >
+                  Product
+                  {dropdownOpen ? (
+                    <FaChevronUp className="ml-2" />
+                  ) : (
+                    <FaChevronDown className="ml-2" />
+                  )}
+                </button>
+                {dropdownOpen && (
+                  <div className="absolute left-0 w-48 bg-[#142850] shadow-lg mt-2 rounded-md">
+                    <Link
+                      to="/ISFSW"
+                      className="block px-4 py-2 text-sm text-white hover:bg-indigo-900"
+                    >
+                      Single Width Scaffolding With Stairway
+                    </Link>
+                    <Link
+                      to="/ISFS"
+                      className="block px-4 py-2 text-sm text-white hover:bg-indigo-900"
+                    >
+                      Single Width Scaffolding Without Stairway
+                    </Link>
+                    <Link
+                      to="/ISFDW"
+                      className="block px-4 py-2 text-sm text-white hover:bg-indigo-900"
+                    >
+                      Double Width Scaffolding With Stairway
+                    </Link>
+                    <Link
+                      to="/ISFD"
+                      className="block px-4 py-2 text-sm text-white hover:bg-indigo-900"
+                    >
+                      Double Width Scaffolding Without Stairway
+                    </Link>
+                  </div>
+                )}
+              </div>
+
               <a 
                 href="#service" 
                 className="text-white hover:text-indigo-600 px-3 py-2 text-sm font-medium no-underline"
@@ -94,12 +138,50 @@ function Navbar() {
             >
               About Us
             </a>
-            <a
-              href="#product"
-              className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-indigo-600 no-underline"
-            >
-              Product
-            </a>
+
+            {/* Mobile Product Dropdown */}
+            <div className="relative">
+              <button
+                onClick={toggleDropdown}
+                className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-indigo-600 no-underline flex items-center w-full"
+              >
+                Product
+                {dropdownOpen ? (
+                  <FaChevronUp className="ml-2" />
+                ) : (
+                  <FaChevronDown className="ml-2" />
+                )}
+              </button>
+              {dropdownOpen && (
+                <div className="bg-[#142850] shadow-lg mt-2 rounded-md">
+                  <Link
+                    to="/ISFSW"
+                    className="block px-4 py-2 text-sm text-white hover:bg-indigo-900"
+                  >
+                    Single Width Scaffolding With Stairway
+                  </Link>
+                  <Link
+                    to="/ISFS"
+                    className="block px-4 py-2 text-sm text-white hover:bg-indigo-900"
+                  >
+                    Single Width Scaffolding Without Stairway
+                  </Link>
+                  <Link
+                    to="/ISFDW"
+                    className="block px-4 py-2 text-sm text-white hover:bg-indigo-900"
+                  >
+                    Double Width Scaffolding With Stairway
+                  </Link>
+                  <Link
+                    to="/ISFD"
+                    className="block px-4 py-2 text-sm text-white hover:bg-indigo-900"
+                  >
+                    Double Width Scaffolding Without Stairway
+                  </Link>
+                </div>
+              )}
+            </div>
+
             <a
               href="#service"
               className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-indigo-600 no-underline"

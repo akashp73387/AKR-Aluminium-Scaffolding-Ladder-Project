@@ -51,8 +51,8 @@ const Swwospage = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h1 className="text-4xl font-extrabold text-[#0A2647] mb-3">
-            Single Width Scaffolding Without Stairway
+          <h1 className="text-3xl md:text-5xl  font-extrabold text-[#0A2647] mb-3">
+            Single Width Scaffolding <span className="text-blue-600">Without Stairway</span>
           </h1>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto">
             Professional-grade scaffolding system designed for safe and
