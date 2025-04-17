@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { div } from "framer-motion/client";
 
 const Highlights = () => {
   const features = [
@@ -63,44 +64,53 @@ const Highlights = () => {
   };
 
   return (
-    <div className="py-16 bg-gradient-to-b from-blue-50 to-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
-            Aluminium Scaffolding Ladder <span className="text-[#2f6ce5]">Highlights</span>
-          </h2>
-         
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto pt-4">
-            Engineered for safety, flexibility, and strength — our aluminium scaffolding ladders are trusted by professionals across industries.
-          </p>
-        </motion.div>
+    <div id="features">
+      <div className="py-16 bg-gradient-to-b from-blue-50 to-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+              Aluminium Scaffolding Ladder{" "}
+              <span className="text-[#2f6ce5]">Highlights</span>
+            </h2>
 
-        <motion.div 
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
-          {features.map((feature, idx) => (
-            <motion.div
-              key={idx}
-              variants={item}
-              whileHover={{ y: -5 }}
-              className={`p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 ${feature.color}`}
-            >
-              <div className={`text-4xl mb-4 ${feature.iconColor}`}>{feature.icon}</div>
-              <h3 className="text-xl font-bold text-gray-800 mb-3">{feature.title}</h3>
-              <p className="text-gray-600">{feature.description}</p>
-            </motion.div>
-          ))}
-        </motion.div>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto pt-4">
+              Engineered for safety, flexibility, and strength — our aluminium
+              scaffolding ladders are trusted by professionals across
+              industries.
+            </p>
+          </motion.div>
+
+          <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            {features.map((feature, idx) => (
+              <motion.div
+                key={idx}
+                variants={item}
+                whileHover={{ y: -5 }}
+                className={`p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 ${feature.color}`}
+              >
+                <div className={`text-4xl mb-4 ${feature.iconColor}`}>
+                  {feature.icon}
+                </div>
+                <h3 className="text-xl font-bold text-gray-800 mb-3">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-600">{feature.description}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
       </div>
     </div>
   );

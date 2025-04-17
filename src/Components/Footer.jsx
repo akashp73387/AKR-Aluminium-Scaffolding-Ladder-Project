@@ -82,7 +82,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gradient-to-b from-[#091835] to-[#050d22] text-white pt-16 pb-8">
+    <footer className="bg-gradient-to-b from-[#091835] to-[#050d22] text-white pt-16 pb-8" >
       <div className="container mx-auto px-4 md:px-6">
         <motion.div 
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12"
@@ -91,6 +91,7 @@ const Footer = () => {
           viewport={{ once: true }}
           variants={containerVariants}
         >
+          
           {/* Company Info */}
           <motion.div className="space-y-6" variants={itemVariants}>
             <div className="flex items-center">
@@ -234,15 +235,6 @@ const Footer = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
         >
-          <button 
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="bg-gray-100 text-blue-950  p-3 rounded-full shadow-lg transition-all hover:shadow-xl mb-8"
-            aria-label="Back to top"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clipRule="evenodd" />
-            </svg>
-          </button>
         </motion.div>
       </div>
     </footer>
