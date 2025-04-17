@@ -34,12 +34,12 @@ function Navbar() {
               >
                 Home
               </a>
-              <a 
-                href="#about" 
+              <Link
+                to="/about-page" 
                 className="text-white hover:text-indigo-600 px-3 py-2 text-sm font-medium no-underline"
               >
                 About Us
-              </a>
+              </Link>
               <a 
                 href="#product" 
                 className="text-white hover:text-indigo-600 px-3 py-2 text-sm font-medium no-underline"

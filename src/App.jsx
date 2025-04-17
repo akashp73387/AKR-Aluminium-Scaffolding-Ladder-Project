@@ -6,17 +6,24 @@ import Swwospage from "./Pages/Swwospage";
 import Dwwspage from "./Pages/Dwwspage";
 import Dwwospage from "./Pages/Dwwospage";
 import ScrollToTop from "./Components/ScrollToTop";
+import FloatingButtons from "./Components/FloatingButtons";
+import Aboutpage from "./Pages/Aboutpage";
 
 const App = () => {
   return (
     <Router>
-      <ScrollToTop/>
+      <ScrollToTop />
+
+      {/* Floating Buttons (visible across all routes) */}
+      <FloatingButtons />
+
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/ISFSW" element={<Swwspage />} />
         <Route path="/ISFS" element={<Swwospage />} />
         <Route path="/ISFDW" element={<Dwwspage />} />
         <Route path="/ISFD" element={<Dwwospage />} />
+       <Route path="/about-page" element={<Aboutpage />} />
       </Routes>
     </Router>
   );
