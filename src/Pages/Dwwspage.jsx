@@ -50,8 +50,8 @@ const Dwwspage = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h1 className="text-4xl font-extrabold text-gray-900 mb-3">
-            Double Width Scaffolding With Stairway
+          <h1 className="text-3xl md:text-5xl font-extrabold text-gray-900 mb-3">
+            Double Width Scaffolding <span className="text-blue-600">With Stairway</span> 
           </h1>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Professional-grade double width scaffolding system with integrated

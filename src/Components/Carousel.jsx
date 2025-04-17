@@ -112,7 +112,7 @@ function Carousel() {
     <div
       className="relative flex flex-col md:flex-row items-center justify-center
        bg-[#0A2647] rounded-2xl mx-4 gap-6 p-6 
-       md:p-12 lg:p-16 xl:p-20 shadow-lg lg:h-[80vh] overflow-hidden mt-1"
+       md:p-12 lg:p-16 xl:p-20 shadow-lg lg:h-[80vh] overflow-hidden mt-3"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
