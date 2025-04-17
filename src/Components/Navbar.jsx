@@ -54,7 +54,7 @@ function Navbar() {
           <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="flex items-center">
               <img className="h-14 w-auto" src={AKRLogo} alt="Logo" />
-              <span className="text-white text-2xl">AKR GRoups </span>
+              <span className="text-white text-2xl">AKR Groups </span>
             </Link>
           </div>
 
