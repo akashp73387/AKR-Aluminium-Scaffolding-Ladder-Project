@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import image1 from "../assets/image1.jpg";
 import image2 from "../assets/image2.jpg";
 import image3 from "../assets/image3.jpg";
+import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
 
 
 const Swwspage = () => {
@@ -39,7 +41,7 @@ const Swwspage = () => {
 
   return (
     <div className="w-full">
-     
+      <Navbar />
       {/* Header */}
       <div className=" max-w-7xl mx-auto py-10 px-4 sm:px-8 md:px-12 lg:px-24 rounded-xl ">
         <motion.div
@@ -67,7 +69,7 @@ const Swwspage = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="bg-white rounded-xl shadow-xl flex flex-col h-full"
         >
-          <div className="relative overflow-hidden w-full h-[500px] flex-grow">
+          <div className="relative overflow-hidden w-full h-[300px] sm:h-[400px] md:h-[500px] flex-grow">
             <motion.img
               key={currentImage}
               src={images[currentImage].src}
@@ -277,7 +279,7 @@ const Swwspage = () => {
           })}
         </div>
       </div>
-    
+      <Footer />
     </div>
   );
 };

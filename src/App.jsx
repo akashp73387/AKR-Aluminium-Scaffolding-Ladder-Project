@@ -5,28 +5,18 @@ import Swwspage from "./Pages/Swwspage";
 import Swwospage from "./Pages/Swwospage";
 import Dwwspage from "./Pages/Dwwspage";
 import Dwwospage from "./Pages/Dwwospage";
+import ScrollToTop from "./Components/ScrollToTop";
 
 const App = () => {
   return (
     <Router>
+      <ScrollToTop/>
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route
-          path="/single-width-scaffolding-with-stairway"
-          element={<Swwspage />}
-        />
-        <Route
-          path="/single-width-scaffolding-without-stairway"
-          element={<Swwospage />}
-        />
-        <Route
-          path="/double-width-scaffolding-with-stairway"
-          element={<Dwwspage />}
-        />
-        <Route
-          path="/double-width-scaffolding-without-stairway"
-          element={<Dwwospage />}
-        />
+        <Route path="/ISFSW" element={<Swwspage />} />
+        <Route path="/ISFS" element={<Swwospage />} />
+        <Route path="/ISFDW" element={<Dwwspage />} />
+        <Route path="/ISFD" element={<Dwwospage />} />
       </Routes>
     </Router>
   );

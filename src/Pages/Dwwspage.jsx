@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import image1 from "../assets/image1.jpg";
 import image2 from "../assets/image2.jpg";
 import image3 from "../assets/image3.jpg";
+import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
 
 
 const Dwwspage = () => {
@@ -39,7 +41,7 @@ const Dwwspage = () => {
 
   return (
     <div className="w-full">
-  
+     <Navbar/>
       {/* Header */}
       <div className="max-w-7xl mx-auto py-10 px-4 sm:px-8 md:px-12 lg:px-24">
         <motion.div
@@ -326,7 +328,7 @@ const Dwwspage = () => {
               })}
             </div>
           </div>
-        
+       <Footer/> 
     </div>
   );
 };

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const products = [
   {
     title: "Single Width Scaffolding With Stairway",
-    code: "single-width-scaffolding-with-stairway",
+    code: "ISFSW",
     description:
       "Engineered for efficiency in compact spaces. The built-in stairway ensures secure and effortless vertical access, ideal for maintenance and installation tasks.",
     image:
@@ -13,21 +13,21 @@ const products = [
   },
   {
     title: "Double Width Scaffolding With Stairway",
-    code: "double-width-scaffolding-with-stairway",
+    code: "ISFDW",
     description:
       "Designed for larger teams and heavier loads, this spacious platform combines safety and functionality with easy stairway access for busy sites.",
     image: "https://www.tsuregroup.com/assets/images/home/p1.png",
   },
   {
     title: "Single Width Scaffolding Without Stairway",
-    code: "single-width-scaffolding-without-stairway",
+    code: "ISFS",
     description:
       "Compact and lightweight, perfect for quick repairs in tight areas. Built to last with high-strength aluminium frames and anti-slip platforms.",
     image: "http://www.tsuregroup.com/assets/images/home/3.png",
   },
   {
     title: "Double Width Scaffolding Without Stairway",
-    code: "double-width-scaffolding-without-stairway",
+    code: "ISFD",
     description:
       "Offers a broad, stable working surface with minimal footprint. Ideal for construction professionals requiring mobility and reliability.",
     image:
