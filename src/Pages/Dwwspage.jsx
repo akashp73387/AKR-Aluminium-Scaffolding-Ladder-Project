@@ -6,7 +6,6 @@ import image3 from "../assets/image3.jpg";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 
-
 const Dwwspage = () => {
   const [currentImage, setCurrentImage] = useState(0);
 
@@ -41,7 +40,7 @@ const Dwwspage = () => {
 
   return (
     <div className="w-full">
-     <Navbar/>
+      <Navbar />
       {/* Header */}
       <div className="max-w-7xl mx-auto py-10 px-4 sm:px-8 md:px-12 lg:px-24">
         <motion.div
@@ -50,10 +49,11 @@ const Dwwspage = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h1 className="text-3xl md:text-5xl font-extrabold text-gray-900 mb-3">
-            Double Width Scaffolding <span className="text-blue-600">With Stairway</span> 
+          <h1 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-gray-900 mb-3">
+            Double Width Scaffolding{" "}
+            <span className="text-blue-600">With Stairway</span>
           </h1>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
             Professional-grade double width scaffolding system with integrated
             staircase for safe, stable, and efficient vertical access in
             high-reach applications.
@@ -70,7 +70,7 @@ const Dwwspage = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="bg-white rounded-xl shadow-xl flex flex-col h-full"
         >
-          <div className="relative overflow-hidden w-full h-[500px] flex-grow">
+          <div className="relative overflow-hidden w-full h-[300px] sm:h-[400px] md:h-[500px] flex-grow">
             <motion.img
               key={currentImage}
               src={images[currentImage].src}
@@ -158,10 +158,10 @@ const Dwwspage = () => {
 
       {/* Content Section */}
       <div className="bg-[#F1F5F9] max-w-7xl mx-auto px-4 sm:px-8 md:px-12 lg:px-24 py-10 rounded-xl shadow-sm">
-        <h2 className="text-2xl font-bold text-gray-800 mb-3 border-b border-gray-300 pb-2">
+        <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-3 border-b border-gray-300 pb-2">
           Double Width Scaffolding With Stairway
         </h2>
-        <p className="text-gray-700 text-sm leading-relaxed">
+        <p className="max-w-3xl text-sm sm:text-base leading-relaxed mx-auto text-gray-700">
           Aluminium Scaffolding - Double Width Aluminium Scaffolding Double
           Width Aluminium Scaffolding With Stairway is the ideal and safe option
           while working at heights. The specially designed stairways are easily
@@ -191,7 +191,7 @@ const Dwwspage = () => {
                   </th>
                 </tr>
                 <tr className="bg-blue-200 text-left border-b-2 border-blue-300">
-                  <th className="px-3 py-2 text-sm font-semibold text-blue-900">
+                  <th className="px-2 sm:px-3 md:px-4 py-2 text-xs md:text-sm font-semibold text-blue-900">
                     Product Code
                   </th>
                   {[
@@ -206,7 +206,7 @@ const Dwwspage = () => {
                   ].map((code, idx) => (
                     <th
                       key={idx}
-                      className="px-4 py-2 text-sm font-semibold text-blue-900"
+                      className="px-2 sm:px-3 md:px-4 py-2 text-xs md:text-sm font-semibold text-blue-900"
                     >
                       {code}
                     </th>
@@ -296,39 +296,40 @@ const Dwwspage = () => {
         </div>
       </div>
 
-      {/* Extra Accessories Heading */}
-     <div className="container mx-auto px-4 py-10">
-            <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">
-              Extra Accessories
-            </h2>
-    
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-              {accessories.map((item, index) => {
-                const bgColors = ["#FAF1E6", "#FFEDFA", "#E8F9FF", "#E1F0DA"];
-                const bgColor = bgColors[index % bgColors.length];
-    
-                return (
-                  <motion.div
-                    key={index}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.98 }}
-                    style={{ backgroundColor: bgColor }}
-                    className="border border-gray-200 shadow-md hover:shadow-xl rounded-2xl p-4 transition duration-300 ease-in-out flex flex-col items-center"
-                  >
-                    <img
-                      src={item.img}
-                      alt={item.name}
-                      className="w-28 h-28 object-contain mb-4 rounded-lg "
-                    />
-                    <p className="text-center text-sm font-semibold text-gray-900">
-                      {item.name}
-                    </p>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </div>
-       <Footer/> 
+   {/* Extra Accessories Heading */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-8 text-center">
+          Extra Accessories
+        </h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          {accessories.map((item, index) => {
+            const bgColors = ["#FAF1E6", "#FFEDFA", "#E8F9FF", "#E1F0DA"];
+            const bgColor = bgColors[index % bgColors.length];
+
+            return (
+              <motion.div
+                key={index}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
+                style={{ backgroundColor: bgColor }}
+                className="border border-gray-200 shadow-md hover:shadow-xl rounded-2xl p-4 transition duration-300 ease-in-out flex flex-col items-center"
+              >
+                <img
+                  src={item.img}
+                  alt={item.name}
+                  className="w-24 sm:w-28 h-24 sm:h-28 object-contain mb-4 rounded-lg"
+                />
+                <p className="text-center text-sm font-semibold text-gray-900">
+                  {item.name}
+                </p>
+              </motion.div>
+            );
+          })}
+        </div>
+      </div>
+
+      <Footer />
     </div>
   );
 };
