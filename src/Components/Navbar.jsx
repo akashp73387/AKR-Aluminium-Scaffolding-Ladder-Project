@@ -61,12 +61,12 @@ function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center justify-center flex-1">
             <div className="flex space-x-4 md:space-x-8">
-              <button
+              <Link to={'/'}
                 onClick={() => smoothScroll("home")}
                 className="text-white hover:text-indigo-600 px-3 py-2 text-sm font-medium no-underline transition-colors duration-300"
               >
                 Home
-              </button>
+              </Link>
               <div className="relative">
                 <button
                   onClick={toggleDropdown}
@@ -115,18 +115,23 @@ function Navbar() {
               >
                 About Us
               </Link>
-              <button
+              <Link
+              to={'/'} 
+              
                 onClick={() => smoothScroll("features")}
+                
+
                 className="text-white hover:text-indigo-600 px-3 py-2 text-sm font-medium no-underline transition-colors duration-300"
               >
                 Features
-              </button>
-              <button
+              </Link>
+              <Link
+              to={'/'}
                 onClick={() => smoothScroll("user")}
                 className="text-white hover:text-indigo-600 px-3 py-2 text-sm font-medium no-underline transition-colors duration-300"
               >
                 Our Users
-              </button>
+              </Link>
             </div>
           </div>
 

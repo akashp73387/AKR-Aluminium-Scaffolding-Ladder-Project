@@ -8,6 +8,7 @@ import Dwwospage from "./Pages/Dwwospage";
 import ScrollToTop from "./Components/ScrollToTop";
 import FloatingButtons from "./Components/FloatingButtons";
 import Aboutpage from "./Pages/Aboutpage";
+import ProductUse from "./Components/ProductUse";
 
 const App = () => {
   return (
@@ -24,6 +25,9 @@ const App = () => {
         <Route path="/ISFDW" element={<Dwwspage />} />
         <Route path="/ISFD" element={<Dwwospage />} />
        <Route path="/about-page" element={<Aboutpage />} />
+       <Route path="/" element={<Highlight />} />
+       <Route path="/" element={<ProductUse />} />
+
       </Routes>
     </Router>
   );

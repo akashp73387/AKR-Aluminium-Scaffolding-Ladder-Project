@@ -29,6 +29,18 @@ const Footer = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // Smooth scroll function for anchor links
+  const handleSmoothScroll = (e, targetId) => {
+    e.preventDefault();
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      window.scrollTo({
+        top: targetElement.offsetTop - 100, // Adjust offset as needed
+        behavior: 'smooth'
+      });
+    }
+  };
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -53,18 +65,16 @@ const Footer = () => {
 
   const socialLinks = [
     { icon: <FaFacebook size={20} />, url: "#", name: "Facebook" },
-    { icon: <FaTwitter size={20} />, url: "#", name: "Twitter" },
-    { icon: <FaLinkedin size={20} />, url: "#", name: "LinkedIn" },
     { icon: <FaInstagram size={20} />, url: "#", name: "Instagram" },
     { icon: <FaWhatsapp size={20} />, url: "#", name: "WhatsApp" }
   ];
 
   const quickLinks = [
-    { name: "Home", url: "#" },
-    { name: "Products", url: "#" },
-    { name: "About Us", url: "#" },
-    { name: "Testimonials", url: "#" },
-    { name: "Contact", url: "#" }
+    { name: "Home", url: "#home"  },
+    { name: "Products", url: "#product" },
+    { name: "About Us", url: "/about-page" },
+    { name: "Feature", url: "#features" },
+    { name: "Our Users", url: "#user" }
   ];
 
   const products = [
@@ -72,17 +82,15 @@ const Footer = () => {
     { name: "Single Width Scaffolding Without Stairway", url: "/ISFS" },
     { name: "Double Width Scaffolding With Stairway", url: "/ISFDW" },
     { name: "Double Width Scaffolding Without Stairway", url: "/ISFD" },
-   
   ];
   
-
   const legalLinks = [
     { name: "Privacy Policy", url: "#" },
     { name: "Terms of Service", url: "#" }
   ];
 
   return (
-    <footer className="bg-gradient-to-b from-[#091835] to-[#050d22] text-white pt-16 pb-8" >
+    <footer className="bg-gradient-to-b from-[#091835] to-[#050d22] text-white pt-16 pb-8">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div 
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12"
@@ -95,7 +103,6 @@ const Footer = () => {
           {/* Company Info */}
           <motion.div className="space-y-6" variants={itemVariants}>
             <div className="flex items-center">
-             
               <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">
                 AKR Ladders
               </h3>
@@ -134,13 +141,24 @@ const Footer = () => {
             <ul className={`space-y-3 ${showQuickLinks ? 'block' : 'hidden'} md:block`}>
               {quickLinks.map((link, index) => (
                 <motion.li key={index} variants={itemVariants}>
-                  <a 
-                    href={link.url} 
-                    className="flex items-center text-gray-300 hover:text-blue-400 transition-colors group"
-                  >
-                    <FaArrowRight className="mr-2 text-xs text-blue-400 opacity-0 group-hover:opacity-100 transition-all" />
-                    <span>{link.name}</span>
-                  </a>
+                  {link.url.startsWith('#') ? (
+                    <a  
+                      href={link.url} 
+                      onClick={(e) => handleSmoothScroll(e, link.url)}
+                      className="flex items-center text-gray-300 hover:text-blue-400 transition-colors group"
+                    >
+                      <FaArrowRight className="mr-2 text-xs text-blue-400 opacity-0 group-hover:opacity-100 transition-all" />
+                      <span>{link.name}</span>
+                    </a>
+                  ) : (
+                    <Link 
+                      to={link.url}
+                      className="flex items-center text-gray-300 hover:text-blue-400 transition-colors group"
+                    >
+                      <FaArrowRight className="mr-2 text-xs text-blue-400 opacity-0 group-hover:opacity-100 transition-all" />
+                      <span>{link.name}</span>
+                    </Link>
+                  )}
                 </motion.li>
               ))}
             </ul>
@@ -160,13 +178,13 @@ const Footer = () => {
             <ul className={`space-y-3 ${showProducts ? 'block' : 'hidden'} md:block`}>
               {products.map((product, index) => (
                 <motion.li key={index} variants={itemVariants}>
-                  <a 
-                    href={product.url} 
+                  <Link 
+                    to={product.url} 
                     className="flex items-center text-gray-300 hover:text-blue-400 transition-colors group"
                   >
                     <FaArrowRight className="mr-2 text-xs text-blue-400 opacity-0 group-hover:opacity-100 transition-all" />
                     <span>{product.name}</span>
-                  </a>
+                  </Link>
                 </motion.li>
               ))}
             </ul>
@@ -225,16 +243,6 @@ const Footer = () => {
           <p className="text-gray-400 text-lg mb-4 md:mb-0">
             &copy; {currentYear} AKR Ladders. All rights reserved.
           </p>
-         
-        </motion.div>
-
-        {/* Back to Top */}
-        <motion.div 
-          className="fixed bottom-6 right-6"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-        >
         </motion.div>
       </div>
     </footer>
