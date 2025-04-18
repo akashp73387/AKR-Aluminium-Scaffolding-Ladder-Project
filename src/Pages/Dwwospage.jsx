@@ -166,91 +166,85 @@ const Dwwospage = () => {
       </div>
 
       {/* Table Section */}
-      <div className="px-4 sm:px-6 lg:px-8 pt-10 pb-20">
-        <div className="overflow-x-auto">
-          <table className="min-w-full bg-blue-50 shadow-lg rounded-lg border-separate border-spacing-0 ring-1 ring-blue-300">
-            <thead>
-              <tr>
-                <th
-                  colSpan={7}
-                  className="px-4 py-4 text-lg sm:text-2xl font-bold text-blue-900 text-center bg-blue-50"
+      <div className="px-4 sm:px-8 md:px-12 lg:px-24 pt-10 pb-20">
+  <div className="flex justify-center">
+    <div className="w-full overflow-x-auto max-w-6xl mx-auto">
+      <table className="table-auto w-full bg-blue-50 shadow-lg rounded-lg border-separate border-spacing-0 ring-1 ring-blue-300">
+        <thead>
+          <tr>
+            <th
+              colSpan={7}
+              className="px-4 py-4 text-lg sm:text-2xl font-bold text-blue-900 text-center bg-blue-50"
+            >
+              Specifications
+            </th>
+          </tr>
+          <tr className="bg-blue-200 text-left border-b-2 border-blue-300">
+            <th className="px-3 py-2 text-sm font-semibold text-blue-900">
+              Product Code
+            </th>
+            {[
+              "ISFD-002",
+              "ISFD-004",
+              "ISFD-006",
+              "ISFD-008",
+              "ISFD-010",
+              "ISFD-012",
+            ].map((code, idx) => (
+              <th
+                key={idx}
+                className="px-4 py-2 text-sm font-semibold text-blue-900"
+              >
+                {code}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {[
+            {
+              label: "Length",
+              values: ["2m", "2m", "2m", "2m", "2m", "2m"],
+            },
+            {
+              label: "Width",
+              values: ["1.4m", "1.4m", "1.4m", "1.4m", "1.4m", "1.4m"],
+            },
+            {
+              label: "Platform Height",
+              values: ["2.2m", "4.2m", "6.2m", "8.2m", "10.2m", "12.2m"],
+            },
+            {
+              label: "Tower Height",
+              values: ["3m", "5m", "7m", "9m", "11m", "13m"],
+            },
+            {
+              label: "Safe Working Load",
+              values: ["250 kg", "250 kg", "250 kg", "250 kg", "250 kg", "250 kg"],
+            },
+          ].map((row, idx) => (
+            <tr key={idx} className="border-b border-blue-200">
+              <td className="px-4 py-3 border-r border-blue-200 text-sm font-medium text-blue-900 bg-blue-100">
+                {row.label}
+              </td>
+              {row.values.map((val, i) => (
+                <td
+                  key={i}
+                  className={`px-4 py-3 ${
+                    i < row.values.length - 1 ? "border-r border-blue-100" : ""
+                  } text-sm text-blue-800`}
                 >
-                  Specifications
-                </th>
-              </tr>
-              <tr className="bg-blue-200 text-left border-b-2 border-blue-300">
-                <th className="px-3 py-2 text-sm font-semibold text-blue-900">
-                  Product Code
-                </th>
-                {[
-                  "ISFD-002",
-                  "ISFD-004",
-                  "ISFD-006",
-                  "ISFD-008",
-                  "ISFD-010",
-                  "ISFD-012",
-                ].map((code, idx) => (
-                  <th
-                    key={idx}
-                    className="px-4 py-2 text-sm font-semibold text-blue-900"
-                  >
-                    {code}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {[
-                {
-                  label: "Length",
-                  values: ["2m", "2m", "2m", "2m", "2m", "2m"],
-                },
-                {
-                  label: "Width",
-                  values: ["1.4m", "1.4m", "1.4m", "1.4m", "1.4m", "1.4m"],
-                },
-                {
-                  label: "Platform Height",
-                  values: ["2.2m", "4.2m", "6.2m", "8.2m", "10.2m", "12.2m"],
-                },
-                {
-                  label: "Tower Height",
-                  values: ["3m", "5m", "7m", "9m", "11m", "13m"],
-                },
-                {
-                  label: "Safe Working Load",
-                  values: [
-                    "250 kg",
-                    "250 kg",
-                    "250 kg",
-                    "250 kg",
-                    "250 kg",
-                    "250 kg",
-                  ],
-                },
-              ].map((row, idx) => (
-                <tr key={idx} className="border-b border-blue-200">
-                  <td className="px-4 py-3 border-r border-blue-200 text-sm font-medium text-blue-900 bg-blue-100">
-                    {row.label}
-                  </td>
-                  {row.values.map((val, i) => (
-                    <td
-                      key={i}
-                      className={`px-4 py-3 ${
-                        i < row.values.length - 1
-                          ? "border-r border-blue-100"
-                          : ""
-                      } text-sm text-blue-800`}
-                    >
-                      {val}
-                    </td>
-                  ))}
-                </tr>
+                  {val}
+                </td>
               ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
 
       {/* Extra Accessories Heading */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10">

@@ -61,8 +61,8 @@ const Certification = () => {
             {/* Text Content */}
             <div className="md:w-2/3 p-8 md:p-12 text-white space-y-6">
               <div className="flex items-center gap-4">
-                <FiAward className="w-10 h-10 text-yellow-500" />
-                <h2 className="text-3xl font-bold">ISO 9001:2015 Certified</h2>
+                <FiAward className="w-8 h-8 md:w-10 md:h-10 text-yellow-500  " />
+                <h2 className="text-1xl md:text-3xl font-bold">ISO 9001:2015 Certified</h2>
               </div>
 
               <p className="text-indigo-100 text-lg leading-relaxed">

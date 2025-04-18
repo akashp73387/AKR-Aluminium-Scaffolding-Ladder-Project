@@ -63,14 +63,14 @@ function Navbar() {
             <div className="flex space-x-4 md:space-x-8">
               <Link to={'/'}
                 onClick={() => smoothScroll("home")}
-                className="text-white hover:text-indigo-600 px-3 py-2 text-sm font-medium no-underline transition-colors duration-300"
+                className="text-white hover:text-blue-400 px-3 py-2 text-sm font-medium no-underline transition-colors duration-300"
               >
                 Home
               </Link>
               <div className="relative">
                 <button
                   onClick={toggleDropdown}
-                  className="text-white hover:text-indigo-600 px-3 py-2 text-sm font-medium flex items-center transition-colors duration-300"
+                  className="text-white hover:text-blue-400 px-3 py-2 text-sm font-medium flex items-center transition-colors duration-300"
                 >
                   Product
                   {dropdownOpen ? (
@@ -111,7 +111,7 @@ function Navbar() {
 
               <Link
                 to="/about-page"
-                className="text-white hover:text-indigo-600 px-3 py-2 text-sm font-medium no-underline transition-colors duration-300"
+                className="text-white hover:text-blue-400 px-3 py-2 text-sm font-medium no-underline transition-colors duration-300"
               >
                 About Us
               </Link>
@@ -121,14 +121,14 @@ function Navbar() {
                 onClick={() => smoothScroll("features")}
                 
 
-                className="text-white hover:text-indigo-600 px-3 py-2 text-sm font-medium no-underline transition-colors duration-300"
+                className="text-white hover:text-blue-400 px-3 py-2 text-sm font-medium no-underline transition-colors duration-300"
               >
                 Features
               </Link>
               <Link
               to={'/'}
                 onClick={() => smoothScroll("user")}
-                className="text-white hover:text-indigo-600 px-3 py-2 text-sm font-medium no-underline transition-colors duration-300"
+                className="text-white hover:text-blue-400 px-3 py-2 text-sm font-medium no-underline transition-colors duration-300"
               >
                 Our Users
               </Link>
