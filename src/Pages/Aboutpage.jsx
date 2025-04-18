@@ -3,42 +3,10 @@ import { motion } from "framer-motion";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import isoLogo from "../assets/iso-certificate.jpg";
-import { FiAward, FiCheckCircle, FiShield, FiTrendingUp, FiEye, FiX, FiDownload  } from "react-icons/fi";
+import { FiAward, FiCheckCircle, FiShield, FiTrendingUp, FiEye, FiX } from "react-icons/fi";
 import { FaHardHat, FaTools, FaBuilding, FaIndustry } from "react-icons/fa";
 
 const Aboutpage = () => {
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.5,
-      },
-    },
-  };
-
-  const fadeIn = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.8 } },
-  };
-
-  const scaleUp = {
-    hidden: { scale: 0.95, opacity: 0 },
-    visible: { scale: 1, opacity: 1, transition: { duration: 0.5 } },
-  };
-
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
@@ -46,86 +14,45 @@ const Aboutpage = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <motion.section
-        initial="hidden"
-        animate="visible"
-        variants={containerVariants}
-        className="relative py-20 overflow-hidden"
-      >
+      <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-indigo-800 opacity-10"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div variants={itemVariants} className="text-center">
-            <h1 className="text-4xl md:text-5xl font-extrabold text-indigo-900 mb-6">
-              About <span className="text-indigo-600">AKR Aluminium</span>
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Pioneering excellence in aluminium scaffolding solutions since our
-              inception
-            </p>
-          </motion.div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-indigo-950 mb-6">
+            About <span className="text-indigo-700">AKR Aluminium</span>
+          </h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Pioneering excellence in aluminium scaffolding solutions since our inception
+          </p>
         </div>
-      </motion.section>
+      </section>
 
       {/* Section 1 */}
-      <motion.section
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={scaleUp}
-        className="max-w-7xl mx-auto my-12 px-4 sm:px-6 lg:px-8"
-      >
+      <section className="max-w-7xl mx-auto my-12 px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
           <div className="flex flex-col md:flex-row">
             {/* Text Content */}
             <div className="md:w-1/2 p-8 md:p-12">
-              <motion.h2
-                variants={itemVariants}
-                className="text-4xl font-bold text-indigo-800 mb-6"
-              >
+              <h2 className="text-4xl font-bold text-indigo-800 mb-6">
                 AKR ALUMINIUM SCAFFOLDING
-              </motion.h2>
+              </h2>
+              <p className="text-gray-700 leading-relaxed text-lg mb-6">
+                Aluminum scaffolding is a versatile and reliable solution for working at heights,
+                offering unparalleled benefits across construction, maintenance, and industrial applications.
+              </p>
 
-              <motion.p
-                variants={itemVariants}
-                className="text-gray-700 leading-relaxed text-lg mb-6"
-              >
-                Aluminum scaffolding is a versatile and reliable solution for
-                working at heights, offering unparalleled benefits across
-                construction, maintenance, and industrial applications.
-              </motion.p>
-
-              <motion.div
-                variants={containerVariants}
-                className="grid grid-cols-2 gap-4 mt-8"
-              >
+              <div className="grid grid-cols-2 gap-4 mt-8">
                 {[
-                  {
-                    icon: <FiCheckCircle className="w-6 h-6" />,
-                    text: "Lightweight yet durable",
-                  },
-                  {
-                    icon: <FaTools className="w-6 h-6" />,
-                    text: "Easy to assemble",
-                  },
-                  {
-                    icon: <FiShield className="w-6 h-6" />,
-                    text: "Corrosion resistant",
-                  },
-                  {
-                    icon: <FiTrendingUp className="w-6 h-6" />,
-                    text: "Boosts productivity",
-                  },
+                  { icon: <FiCheckCircle className="w-6 h-6" />, text: "Lightweight yet durable" },
+                  { icon: <FaTools className="w-6 h-6" />, text: "Easy to assemble" },
+                  { icon: <FiShield className="w-6 h-6" />, text: "Corrosion resistant" },
+                  { icon: <FiTrendingUp className="w-6 h-6" />, text: "Boosts productivity" },
                 ].map((feature, index) => (
-                  <motion.div
-                    key={index}
-                    variants={itemVariants}
-                    className="flex items-center gap-3"
-                  >
+                  <div key={index} className="flex items-center gap-3">
                     <span className="text-indigo-600">{feature.icon}</span>
                     <span className="text-gray-700">{feature.text}</span>
-                  </motion.div>
+                  </div>
                 ))}
-              </motion.div>
+              </div>
             </div>
 
             {/* Image */}
@@ -139,24 +66,13 @@ const Aboutpage = () => {
             </div>
           </div>
         </div>
-      </motion.section>
+      </section>
 
       {/* Section 2 - ISO Certification */}
-      <motion.section
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={fadeIn}
-        className="max-w-7xl mx-auto my-16 px-4 sm:px-6 lg:px-8"
-      >
-        {/* Modal/Popup */}
+      <section className="max-w-7xl mx-auto my-16 px-4 sm:px-6 lg:px-8">
         {isModalOpen && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className="relative bg-white rounded-xl shadow-xl max-w-md w-full"
-            >
+            <div className="relative bg-white rounded-xl shadow-xl max-w-md w-full">
               <button
                 onClick={() => setIsModalOpen(false)}
                 className="absolute top-4 right-4 text-gray-500 hover:text-indigo-600 transition-colors"
@@ -168,16 +84,13 @@ const Aboutpage = () => {
                 alt="ISO 9001:2015 Certificate"
                 className="w-full h-auto object-contain p-6"
               />
-              <div className="p-4 border-t border-gray-100 flex justify-center">
-             
-              </div>
-            </motion.div>
+            </div>
           </div>
         )}
 
-        <div className="bg-gradient-to-r from-indigo-700 to-indigo-800 rounded-3xl shadow-2xl overflow-hidden">
+        <div className="bg-gradient-to-r from-indigo-900 to-blue-950 rounded-3xl shadow-2xl overflow-hidden">
           <div className="flex flex-col md:flex-row items-center">
-            {/* Certificate Image Container */}
+            {/* Certificate Image */}
             <div className="md:w-1/3 p-8 md:p-12 flex flex-col items-center justify-center">
               <motion.div
                 whileHover={{ scale: 1.03 }}
@@ -189,7 +102,6 @@ const Aboutpage = () => {
                     alt="ISO 9001:2015 Certified"
                     className="w-full h-full object-contain"
                   />
-                  <div className="absolute inset-0 bg-indigo-500/10 rounded-full animate-pulse pointer-events-none"></div>
                 </div>
                 <div className="mt-6 flex justify-center">
                   <button
@@ -203,107 +115,67 @@ const Aboutpage = () => {
               </motion.div>
             </div>
 
-            {/* Text Content */}
-            <div className="md:w-2/3 p-8 md:p-12 text-white">
-              <motion.div variants={containerVariants} className="space-y-6">
-                <motion.div
-                  variants={itemVariants}
-                  className="flex items-center gap-4"
-                >
-                  <FiAward className="w-10 h-10 text-indigo-200" />
-                  <h2 className="text-3xl font-bold">
-                    ISO 9001:2015 Certified
-                  </h2>
-                </motion.div>
+            {/* Text */}
+            <div className="md:w-2/3 p-8 md:p-12 text-white space-y-6">
+              <div className="flex items-center gap-4">
+                <FiAward className="w-10 h-10 text-yellow-500" />
+                <h2 className="text-3xl font-bold">ISO 9001:2015 Certified</h2>
+              </div>
 
-                <motion.p
-                  variants={itemVariants}
-                  className="text-indigo-100 text-lg leading-relaxed"
-                >
-                  AKR Scaffolding Ladders proudly maintains ISO 9001:2015
-                  certification, demonstrating our systematic approach to
-                  quality management and customer satisfaction. This
-                  internationally recognized standard validates our commitment
-                  to operational excellence.
-                </motion.p>
+              <p className="text-indigo-100 text-lg leading-relaxed">
+                AKR Scaffolding Ladders proudly maintains ISO 9001:2015 certification,
+                demonstrating our systematic approach to quality management and customer satisfaction.
+              </p>
 
-                <motion.p
-                  variants={itemVariants}
-                  className="text-indigo-100 text-lg leading-relaxed"
-                >
-                  Our certification process involved rigorous evaluation of our
-                  quality management systems, ensuring consistent delivery of
-                  high-quality scaffolding solutions that meet both regulatory
-                  requirements and customer expectations.
-                </motion.p>
+              <p className="text-indigo-100 text-lg leading-relaxed">
+                Our certification process involved rigorous evaluation of our quality management systems,
+                ensuring consistent delivery of high-quality scaffolding solutions.
+              </p>
 
-                <motion.div variants={itemVariants} className="pt-2">
-                  <div className="flex flex-wrap gap-4">
-                    <div className="flex items-center gap-2 text-indigo-200">
-                      <FiCheckCircle className="w-5 h-5" />
-                      <span>Quality Assurance</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-indigo-200">
-                      <FiCheckCircle className="w-5 h-5" />
-                      <span>Process Improvement</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-indigo-200">
-                      <FiCheckCircle className="w-5 h-5" />
-                      <span>Customer Focus</span>
-                    </div>
+              <div className="flex flex-wrap gap-4 pt-2">
+                {["Quality Assurance", "Process Improvement", "Customer Focus"].map((text, i) => (
+                  <div key={i} className="flex items-center gap-2 text-indigo-200">
+                    <FiCheckCircle className="w-5 h-5 text-emerald-500" />
+                    <span>{text}</span>
                   </div>
-                </motion.div>
-              </motion.div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-      </motion.section>
+      </section>
 
       {/* Industries Section */}
-      <motion.section
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={containerVariants}
-        className="max-w-7xl mx-auto my-20 px-4 sm:px-6 lg:px-8"
-      >
-        <motion.h2
-          variants={itemVariants}
-          className="text-3xl font-bold text-center text-indigo-900 mb-12"
-        >
+      <section className="max-w-7xl mx-auto my-20 px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl md:text-5xl font-bold text-center text-indigo-900 mb-12">
           Industries We Serve
-        </motion.h2>
+        </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {[
             {
               icon: <FaBuilding className="w-10 h-10 text-indigo-600" />,
               title: "Construction",
-              description:
-                "Supporting high-rise projects and building maintenance with safe access solutions",
+              description: "Supporting high-rise projects and building maintenance",
             },
             {
               icon: <FaIndustry className="w-10 h-10 text-indigo-600" />,
               title: "Industrial",
-              description:
-                "Facilitating maintenance and operations in manufacturing plants",
+              description: "Facilitating maintenance in manufacturing plants",
             },
             {
               icon: <FaHardHat className="w-10 h-10 text-indigo-600" />,
               title: "Oil & Gas",
-              description:
-                "Providing reliable access solutions for refineries and offshore platforms",
+              description: "Reliable access solutions for refineries and platforms",
             },
             {
               icon: <FiAward className="w-10 h-10 text-indigo-600" />,
               title: "Aviation",
-              description:
-                "Supporting aircraft maintenance and airport infrastructure projects",
+              description: "Aircraft maintenance and airport infrastructure",
             },
           ].map((industry, index) => (
             <motion.div
               key={index}
-              variants={itemVariants}
               whileHover={{ y: -5 }}
               className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
             >
@@ -311,71 +183,53 @@ const Aboutpage = () => {
                 <div className="p-4 bg-indigo-50 rounded-full mb-4">
                   {industry.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                  {industry.title}
-                </h3>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">{industry.title}</h3>
                 <p className="text-gray-600">{industry.description}</p>
               </div>
             </motion.div>
           ))}
         </div>
-      </motion.section>
+      </section>
 
       {/* Why Choose Us */}
-      <motion.section
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={containerVariants}
-        className="bg-indigo-50 py-16"
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div variants={itemVariants} className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-indigo-900">
-              Why Choose AKR Aluminium Scaffolding?
-            </h2>
-            <p className="text-lg text-gray-600 mt-4 max-w-3xl mx-auto">
-              Our commitment to quality and safety sets us apart in the industry
-            </p>
-          </motion.div>
+      <section className="bg-indigo-50 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-5xl font-bold text-indigo-900">Why Choose AKR Aluminium Scaffolding?</h2>
+          <p className="text-lg text-gray-600 mt-4 max-w-3xl mx-auto">
+            Our commitment to quality and safety sets us apart in the industry
+          </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             {[
               {
                 title: "Premium Materials",
-                description:
-                  "We use only the highest grade aluminium alloys for durability and strength",
+                description: "We use the highest grade aluminium alloys",
                 icon: "🛠️",
               },
               {
                 title: "Safety First",
-                description:
-                  "All our scaffolding meets and exceeds international safety standards",
+                description: "Our products exceed international safety standards",
                 icon: "🛡️",
               },
               {
                 title: "Expert Support",
-                description:
-                  "Our team provides comprehensive guidance from selection to installation",
+                description: "Guidance from selection to installation",
                 icon: "👷",
               },
             ].map((item, index) => (
               <motion.div
                 key={index}
-                variants={itemVariants}
                 whileHover={{ scale: 1.03 }}
                 className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               >
                 <div className="text-4xl mb-4">{item.icon}</div>
-                <h3 className="text-xl font-semibold text-indigo-800 mb-2">
-                  {item.title}
-                </h3>
+                <h3 className="text-xl font-semibold text-indigo-800 mb-2">{item.title}</h3>
                 <p className="text-gray-600">{item.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
-      </motion.section>
+      </section>
 
       <Footer />
     </div>

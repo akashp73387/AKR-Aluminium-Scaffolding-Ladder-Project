@@ -102,7 +102,7 @@ const Certification = () => {
       </section>
 
       {/* Industries Section */}
-      <section className="max-w-7xl mx-auto my-20 px-4 sm:px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto my-5 px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl md:text-5xl font-bold text-center text-indigo-950 mb-12">
           Industries We Serve
         </h2>
@@ -110,25 +110,25 @@ const Certification = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {[
             {
-              icon: <FaBuilding className="w-10 h-10 text-indigo-600" />,
+              icon: <FaBuilding className="w-10 h-10 text-indigo-800" />,
               title: "Construction",
               description:
                 "Supporting high-rise projects and building maintenance with safe access solutions",
             },
             {
-              icon: <FaIndustry className="w-10 h-10 text-indigo-600" />,
+              icon: <FaIndustry className="w-10 h-10 text-indigo-800" />,
               title: "Industrial",
               description:
                 "Facilitating maintenance and operations in manufacturing plants",
             },
             {
-              icon: <FaHardHat className="w-10 h-10 text-indigo-600" />,
+              icon: <FaHardHat className="w-10 h-10 text-indigo-800" />,
               title: "Oil & Gas",
               description:
                 "Providing reliable access solutions for refineries and offshore platforms",
             },
             {
-              icon: <FiAward className="w-10 h-10 text-indigo-600" />,
+              icon: <FiAward className="w-10 h-10 text-indigo-800" />,
               title: "Aviation",
               description:
                 "Supporting aircraft maintenance and airport infrastructure projects",
@@ -136,7 +136,7 @@ const Certification = () => {
           ].map((industry, index) => (
             <div
               key={index}
-              className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition-all duration-300"
+              className="bg-purple-50 p-8 rounded-xl shadow-lg border border-gray-100 transition-all duration-300"
             >
               <div className="flex flex-col items-center text-center">
                 <div className="p-4 bg-indigo-50 rounded-full mb-4">

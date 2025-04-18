@@ -76,7 +76,7 @@ const Highlights = () => {
           >
             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
               Aluminium Scaffolding Ladder{" "}
-              <span className="text-[#2f6ce5]">Highlights</span>
+              <span className="text-[#2f6ce5]">Features</span>
             </h2>
 
             <p className="text-lg text-gray-600 max-w-3xl mx-auto pt-4">
