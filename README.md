@@ -10,3 +10,15 @@ Frontend: React, Tailwind CSS, Flowbite
 Backend: Node.js, Express
 
 Database: MongoDB 
+
+Setup & Installation
+Prerequisites
+Node.js (v14 or above)
+
+npm (v6 or above)
+
+MongoDB Atlas (or PostgreSQL cloud service) for cloud database management
+
+To Run :
+
+Npm run dev
