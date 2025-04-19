@@ -56,6 +56,7 @@ const Footer = () => {
     { name: "Privacy Policy", url: "#" },
     { name: "Terms of Service", url: "#" }
   ];
+  
 
   return (
     <footer className="bg-gradient-to-b from-[#091835] to-[#050d22] text-white pt-16 pb-8">
@@ -96,7 +97,7 @@ const Footer = () => {
             </h3>
             <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden border border-gray-700">
               <iframe 
-               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17540.87873369843!2d80.14451174111527!3d13.19734790946545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a527c94fa912751%3A0xf9d2a3c53a175e68!2s052%2C%2055W8%2B7XP%2C%201%2C%20Kalaingar%20St%2C%20Gandhinagar%2C%20Red%20Hills%2C%20Tiruvallur%2C%20Padianallur%2C%20Tamil%20Nadu%20600052!5e1!3m2!1sen!2sin!4v1745041324641!5m2!1sen!2sin"
+               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3924.9338616588802!2d80.16472557512668!3d13.195742887140607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a527d014a011219%3A0x998ff364b0826210!2sAKR%20Groups%20Ladders!5e1!3m2!1sen!2sin!4v1745046239165!5m2!1sen!2sin"
                 width="100%" 
                 height="250" 
                 style={{ border: 0 }} 
@@ -105,6 +106,7 @@ const Footer = () => {
                 title="AKR Ladders Location"
                 className="w-full h-full"
               ></iframe>
+             
 
 
             </div>
