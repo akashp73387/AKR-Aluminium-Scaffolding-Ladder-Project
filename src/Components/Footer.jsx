@@ -10,17 +10,17 @@ import AKRLogo from "../assets/Akklogo.png";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  const [showQuickLinks, setShowQuickLinks] = useState(false);
   const [showProducts, setShowProducts] = useState(false);
+  const [showContact, setShowContact] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {
-        setShowQuickLinks(true);
         setShowProducts(true);
+        setShowContact(true);
       } else {
-        setShowQuickLinks(false);
         setShowProducts(false);
+        setShowContact(false);
       }
     };
     handleResize();
@@ -43,14 +43,6 @@ const Footer = () => {
     { icon: <FaFacebook size={20} />, url: "#", name: "Facebook" },
     { icon: <FaInstagram size={20} />, url: "#", name: "Instagram" },
     { icon: <FaWhatsapp size={20} />, url: "#", name: "WhatsApp" }
-  ];
-
-  const quickLinks = [
-    { name: "Home", url: "#home"  },
-    { name: "Products", url: "#product" },
-    { name: "About Us", url: "/about-page" },
-    { name: "Feature", url: "#features" },
-    { name: "Our Users", url: "#user" }
   ];
 
   const products = [
@@ -97,41 +89,25 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Google Map */}
           <div className="space-y-6">
-            <button 
-              onClick={() => setShowQuickLinks(!showQuickLinks)} 
-              className="w-full flex justify-between items-center text-xl font-bold text-blue-400 border-b border-blue-600 pb-2 md:cursor-default md:pointer-events-none"
-            >
-              Quick Links
-              <span className="md:hidden">
-                {showQuickLinks ? <FaChevronUp /> : <FaChevronDown />}
-              </span>
-            </button>
-            <ul className={`space-y-3 ${showQuickLinks ? 'block' : 'hidden'} md:block`}>
-              {quickLinks.map((link, index) => (
-                <li key={index}>
-                  {link.url.startsWith('#') ? (
-                    <a  
-                      href={link.url} 
-                      onClick={(e) => handleSmoothScroll(e, link.url)}
-                      className="flex items-center text-gray-300 hover:text-blue-400 transition-colors group"
-                    >
-                      <FaArrowRight className="mr-2 text-xs text-blue-400 opacity-0 group-hover:opacity-100 transition-all" />
-                      <span>{link.name}</span>
-                    </a>
-                  ) : (
-                    <Link 
-                      to={link.url}
-                      className="flex items-center text-gray-300 hover:text-blue-400 transition-colors group"
-                    >
-                      <FaArrowRight className="mr-2 text-xs text-blue-400 opacity-0 group-hover:opacity-100 transition-all" />
-                      <span>{link.name}</span>
-                    </Link>
-                  )}
-                </li>
-              ))}
-            </ul>
+            <h3 className="text-xl font-bold text-blue-400 border-b border-blue-600 pb-2 inline-block">
+              Our Location
+            </h3>
+            <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden border border-gray-700">
+              <iframe 
+               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17540.87873369843!2d80.14451174111527!3d13.19734790946545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a527c94fa912751%3A0xf9d2a3c53a175e68!2s052%2C%2055W8%2B7XP%2C%201%2C%20Kalaingar%20St%2C%20Gandhinagar%2C%20Red%20Hills%2C%20Tiruvallur%2C%20Padianallur%2C%20Tamil%20Nadu%20600052!5e1!3m2!1sen!2sin!4v1745041324641!5m2!1sen!2sin"
+                width="100%" 
+                height="250" 
+                style={{ border: 0 }} 
+                allowFullScreen="" 
+                loading="lazy" 
+                title="AKR Ladders Location"
+                className="w-full h-full"
+              ></iframe>
+
+
+            </div>
           </div>
 
           {/* Our Products */}
@@ -162,10 +138,16 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div className="space-y-6">
-            <h3 className="text-xl font-bold text-blue-400 border-b border-blue-600 pb-2 inline-block">
+            <button 
+              onClick={() => setShowContact(!showContact)} 
+              className="w-full flex justify-between items-center text-xl font-bold text-blue-400 border-b border-blue-600 pb-2 md:cursor-default md:pointer-events-none"
+            >
               Contact Us
-            </h3>
-            <div className="space-y-4">
+              <span className="md:hidden">
+                {showContact ? <FaChevronUp /> : <FaChevronDown />}
+              </span>
+            </button>
+            <div className={`space-y-4 ${showContact ? 'block' : 'hidden'} md:block`}>
               <div className="flex items-start space-x-4">
                 <div className="bg-blue-600 p-2 rounded-full">
                   <FaMapMarkerAlt className="text-white" />
