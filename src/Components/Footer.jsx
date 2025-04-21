@@ -39,11 +39,7 @@ const Footer = () => {
     }
   };
 
-  const socialLinks = [
-    { icon: <FaFacebook size={20} />, url: "#", name: "Facebook" },
-    { icon: <FaInstagram size={20} />, url: "#", name: "Instagram" },
-    { icon: <FaWhatsapp size={20} />, url: "#", name: "WhatsApp" }
-  ];
+  
 
   const products = [
     { name: "Single Width Scaffolding With Stairway", url: "/ISFSW" },
@@ -76,18 +72,7 @@ const Footer = () => {
               We combine safety, innovation, and durability to deliver exceptional performance 
               for industrial and commercial applications.
             </p>
-            <div className="flex space-x-4">
-              {socialLinks.map((social, index) => (
-                <a 
-                  key={index}
-                  href={social.url}
-                  className="bg-gray-800 hover:bg-blue-600 text-gray-300 hover:text-white p-3 rounded-full transition-all duration-300"
-                  aria-label={social.name}
-                >
-                  {social.icon}
-                </a>
-              ))}
-            </div>
+          
           </div>
 
           {/* Google Map */}

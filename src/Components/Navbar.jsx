@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaBars, FaTimes, FaChevronDown, FaChevronUp } from "react-icons/fa";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import AKRLogo from "../assets/Akklogo.png";
 
 function Navbar() {
