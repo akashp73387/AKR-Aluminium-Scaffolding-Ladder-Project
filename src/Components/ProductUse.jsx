@@ -134,7 +134,7 @@ function ProductUse() {
                   <div className="text-4xl mb-4">{area.icon}</div>
                   <button 
                     className="text-gray-400 hover:text-gray-600 focus:outline-none"
-                    aria-label={expandedCard === index ? "Collapse card" : "Expand card"}
+                    aria-label={expandedCard === index ? "Collapse card" : "Expand card"}                  
                   >
                     {expandedCard === index ? <FiChevronUp size={24} /> : <FiChevronDown size={24} />}
                   </button>
